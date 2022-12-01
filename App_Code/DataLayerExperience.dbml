@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="erpExperience" Class="DataLayerExperienceDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=EPPM-PR0392\MSSQLSERVER16;Initial Catalog=erpExperience;User ID=sa;Connect Timeout=200" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="erpExperienceConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.CompteUtilisateur" Method="CompteUtilisateur">
+    <ElementType Name="CompteUtilisateurResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NomPrenom" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="login" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.InsertControleQualite" Method="InsertControleQualite">
+    <Parameter Name="CodeDocument" Parameter="codeDocument" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Designation" Parameter="designation" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Reference" Parameter="reference" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="RQEP" Parameter="rQEP" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="DPCPE" Parameter="dPCPE" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="DesignCoord" Parameter="designCoord" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="PC" Parameter="pC" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="EL" Parameter="eL" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="INS" Parameter="iNS" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="MEPP" Parameter="mEPP" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="CV" Parameter="cV" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="SF" Parameter="sF" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ISPC" Parameter="iSPC" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ISELPRJS" Parameter="iSELPRJS" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ISINSPRJS" Parameter="iSINSPRJS" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ISMEPPPRJS" Parameter="iSMEPPPRJS" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ISCVPRJS" Parameter="iSCVPRJS" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ISSFPRJS" Parameter="iSSFPRJS" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="PSLPC" Parameter="pSLPC" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="PSLEL" Parameter="pSLEL" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="PSLIN" Parameter="pSLIN" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="PSLMEPP" Parameter="pSLMEPP" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="PSLCV" Parameter="pSLCV" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="PSLSF" Parameter="pSLSF" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="CLIENT" Parameter="cLIENT" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Observation" Parameter="observation" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertDocumentEtude" Method="InsertDocumentEtude">
+    <Parameter Name="Reference" Parameter="reference" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="CodeDocument" Parameter="codeDocument" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="TitreDocument" Parameter="titreDocument" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Rev" Parameter="rev" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Avancement" Parameter="avancement" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="EmissionPlanifiee" Parameter="emissionPlanifiee" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ApprobationPanifiee" Parameter="approbationPanifiee" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Poids" Parameter="poids" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Ponderation" Parameter="ponderation" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="NBHIngenieur" Parameter="nBHIngenieur" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="NBHProjeteur" Parameter="nBHProjeteur" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Etat" Parameter="etat" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertDocEtudeETQualiteProjet" Method="InsertDocEtudeETQualiteProjet">
+    <Parameter Name="Matricume" Parameter="matricume" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="NewCodeDocument" Parameter="newCodeDocument" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="OldCodeDocument" Parameter="oldCodeDocument" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="NewReference" Parameter="newReference" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertDetailProjet" Method="insertDetailProjet">
+    <Parameter Name="reference" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="idclient" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="idphace" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="idTypeProjet" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="taskforce" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="idclasseProjet" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Revision" Parameter="revision" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="DD" Parameter="dD" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="DF" Parameter="dF" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="RemarqClient" Parameter="remarqClient" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="RemarqProjet" Parameter="remarqProjet" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.updatDetailProjet" Method="updatDetailProjet">
+    <Parameter Name="reference" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="idclient" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="idphace" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="idTypeProjet" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="taskforce" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="idclasseProjet" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Revision" Parameter="revision" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="DD" Parameter="dD" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="DF" Parameter="dF" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="RemarqClient" Parameter="remarqClient" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="RemarqProjet" Parameter="remarqProjet" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetDetailProjet" Method="GetDetailProjet">
+    <Parameter Name="Ref" Parameter="ref" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="GetDetailProjetResult">
+      <Column Name="reference" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="taskforce" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Client" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Classe" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Phase" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Revision" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DD" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DF" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RemarqClient" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RemarqProjet" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetAdminByMatricule" Method="GetAdminByMatricule">
+    <Parameter Name="Matricule" Parameter="matricule" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="GetAdminByMatriculeResult">
+      <Column Name="Matricule" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreatedByUserID" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="CreatedOnDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.InsertPermissionInterfaceByProj" Method="InsertPermissionInterfaceByProj">
+    <Parameter Name="reference" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Matriculen" Parameter="matriculen" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
